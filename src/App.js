@@ -8,7 +8,7 @@ import { NotFoundPage } from './pages/NotFoundPage.jsx';
 
 function App() {
   return (
-    <div className='App'>
+    <div className={`App ${theme}`}>
       <Routes>
         <Route path='/' element={<Layout />} >
           <Route index element={<CoursesPage />} />
