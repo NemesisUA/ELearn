@@ -1,3 +1,13 @@
 .App {
-  text-align: center;
+  min-height: 100vh;  
+}
+
+.light {
+  color: #333;
+  background-color: #fff;
+}
+
+.dark {
+  color: #ddd;
+  background-color: #333;
 }
