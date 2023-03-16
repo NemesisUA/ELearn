@@ -13,7 +13,7 @@ ul, li {
   font-size: 10px;
 
   --font-primary: "Poppins", "Verdana", sans-serif;
-  --font-secondary: "Changa One", cursive;
+  --font-secondary: "Roboto" "Arial", sans-serif;
 
   --text-shadow: 1px 1px gray;   
   --box-shadow-light: 3px 3px 6px lightgray;
@@ -23,6 +23,8 @@ ul, li {
 
   --color-primary: #FF9900;
   --color-secondary: #FF7549;
+
+  --color-secondary-lighten: #fea285;
 }
 
 body {

@@ -4,14 +4,17 @@ import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import { ThemeProvider } from './hoc/ThemeProvider'
+import { CoursesProvider } from './hoc/CoursesProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider>      
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+    <ThemeProvider> 
+      <CoursesProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CoursesProvider>     
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -1,0 +1,16 @@
+.courses {
+  padding: 30px 30px;
+}
+
+.courses__title {
+  text-align: center;
+  color: var(--color-secondary);
+  margin-bottom: 30px;
+}
+
+.courses__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}

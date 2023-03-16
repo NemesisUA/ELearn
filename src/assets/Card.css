@@ -1,0 +1,67 @@
+.card {
+  display: grid;
+  grid-template-rows: 100px 160px 40px 40px;
+  width: 340px;
+  height: 500px;   
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 3px 10px var(--color-secondary);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: var(--color-secondary-lighten);
+  box-shadow: 2px 3px 10px lightgray;
+  transform: scale(1.05);
+}
+
+.dark .card {
+  background-color: #888;
+  color: #fff;
+}
+
+.dark .card:hover {
+  background-color: #e68c70;
+  box-shadow: 2px 3px 10px #e68c70;
+  transform: scale(1.05);
+}
+
+.card__title {
+  text-align: center;
+  color: #424294;
+  font-style: italic;
+  padding: 0 10px;
+}
+
+.dark .card__title {
+  color: #fff;
+  /* color: #424294; */
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+}
+
+.card__info {
+  padding-left: 20px;
+}
+
+.card b {
+  color: #424294;
+}
+
+.card__skills-list {
+  font-size: 1.6rem;
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  padding-top: 20px;
+  list-style: none; 
+}
+
+.card__skill::before {
+  /* content: '\2666'; diamond  2605 - star5*/
+  content: '\2726';
+  color: #424294;
+  margin-right: 5px;
+}
