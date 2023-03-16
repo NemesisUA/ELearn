@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { Layout } from './components/Layout.jsx'
@@ -5,8 +6,11 @@ import { CoursesPage } from './pages/CoursesPage.jsx';
 import { SinglePage } from './pages/SinglePage.jsx';
 import { AboutPage } from './pages/AboutPage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage.jsx';
+import { ThemeContext } from './hoc/ThemeProvider.jsx';
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div className={`App ${theme}`}>
       <Routes>
