@@ -27,7 +27,6 @@ export const Header = () => {
               <NavLink to='about' className="navigation__link">About</NavLink>
             </li>
           </ul>
-
           <Button onClick={toggleTheme}
             className="styled-btn">
             Toggle {
