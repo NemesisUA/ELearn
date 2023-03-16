@@ -1,0 +1,25 @@
+.task {
+  max-width: 1200px;
+  font-size: 1.6rem;
+}
+
+.task__title {
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.task h4 {
+  margin-top: 50px;
+}
+
+li ul {
+  padding-left: 30px;
+}
+
+.task code {
+  color: var(--color-secondary);
+}
+
+.task:last-child {
+  font-style: italic;
+}
