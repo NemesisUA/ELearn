@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../assets/Header.css';
+import Button from './UI/Button';
 import { ThemeContext } from '../hoc/ThemeProvider';
 
 export const Header = () => {
@@ -9,31 +10,32 @@ export const Header = () => {
   return (
     <header className='header'>
       <div className='wrapper header__wrapper'>
-      <div className='logo-wrapper'>
-            <Link to='/'>
-              <div className="logo"></div>
-            </Link>
-            <h1 className="header__title">CURRENCY CONVERTER</h1>
-          </div>
-          <nav className="header__navigation">
+        <div className='logo-wrapper'>
+          <NavLink to='/'>
+            <div className="logo"></div>
+          </NavLink>
+          <span>E</span>
+          <h1 className="header__title">-Learn</h1>
+        </div>
 
-            <ul className="navigation">
-              <li className="navigation__item">
-                <Link to='/' className="navigation__link">Home</Link>
-              </li>
-              <li className="navigation__item">
-                <Link to='about' className="navigation__link">About</Link>
-              </li>
-            </ul>
+        <nav className="header__navigation">
+          <ul className="navigation">
+            <li className="navigation__item">
+              <NavLink to='/' className="navigation__link">Courses</NavLink>
+            </li>
+            <li className="navigation__item">
+              <NavLink to='about' className="navigation__link">About</NavLink>
+            </li>
+          </ul>
 
-            <button onClick={toggleTheme}
-              className="styled-btn">
-              toggle {
-                theme === 'light' ? <i className="fa-solid fa-moon" ></i>
-                 : <i className="fa-solid fa-sun" ></i>
-               } 
-            </button>
-          </nav>
+          <Button onClick={toggleTheme}
+            className="styled-btn">
+            Toggle {
+              theme === 'light' ? <i className="fa-solid fa-moon" ></i>
+                : <i className="fa-solid fa-sun" ></i>
+            }
+          </Button>
+        </nav>
       </div>
     </header>
   )

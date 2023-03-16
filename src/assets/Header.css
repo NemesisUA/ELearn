@@ -1,5 +1,120 @@
+.light .header {
+  box-shadow: 0 3px 20px #eee;
+}
+
+.dark .header {
+  box-shadow: 0 3px 20px #aaa;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-image: url('./icons/unfilledsecondary.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  transition: all 0.3s ease-in;
+}
+
+.logo:hover {
+  background-image: url('./icons/unfilled.png');
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;  
+}
+
+.light .logo-wrapper {
+  text-shadow: 1px 1px gray;
+}
+
+.dark .logo-wrapper {
+  text-shadow: 1px 1px lightgray;
+}
+
+.logo-wrapper .logo {
+  margin-right: 20px;
+}
+
+.header__title {
+  font-size: 5rem;
+  font-family: var(--font-primary);
+  font-style: italic;
+  text-transform: capitalize;
+  color: var(--color-primary);
+  margin: 2rem 0;
+  /* text-shadow: 3px 3px  var(--color-secondary),
+   2px 2px  var(--color-secondary),
+   1px 1px  var(--color-secondary); */
+}
+
+.header__title::first-letter {
+  color: var(--color-secondary);
+}
+
+.logo-wrapper span {
+  transform: skew(10deg);
+  font-size: 5rem;
+  font-family: var(--font-primary);
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+}
+
+.navigation__item {
+  margin-right: 28px;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in;
+}
+
+.navigation__link {
+  position: relative;
+  color: var(--color-primary);
+}
+
+.navigation__link.active { 
+  color: var(--color-secondary);
+}
+
+.navigation__link:hover {
+  color: var(--color-secondary);    
+}
+
+.navigation__link::after {
+  content: "";
+  position: absolute;
+  width: 100%; 
+  height: 2px;
+  border-radius: 3px;    
+  background-color: var(--color-secondary);
+  left: 0;
+  bottom: -2px;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navigation__link:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.navigation__item:active {
+  transform: translateY(1px);
 }
