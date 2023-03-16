@@ -1,6 +1,6 @@
 .card {
   display: grid;
-  grid-template-rows: 100px 160px 40px 40px;
+  grid-template-rows: 100px 160px 40px 20px 1fr;
   width: 340px;
   height: 500px;   
   border-radius: 10px;
@@ -34,8 +34,9 @@
 }
 
 .dark .card__title {
-  color: #fff;
-  /* color: #424294; */
+  /* color: #fff; */
+  /* color: #FFBC00; */
+  color: rgb(145, 240, 240);
 }
 
 .card__image {
@@ -44,11 +45,28 @@
 }
 
 .card__info {
-  padding-left: 20px;
+  padding-left: 15px;
+  padding-right: 10px;
+  margin-top: 10px;
 }
 
 .card b {
   color: #424294;
+}
+
+.dark .card b {
+  /* color: #FFBC00; */
+  color: rgb(145, 240, 240);
+}
+
+.card__rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__lessons-num {
+  margin: 0;
 }
 
 .card__skills-list {
@@ -63,5 +81,11 @@
   /* content: '\2666'; diamond  2605 - star5*/
   content: '\2726';
   color: #424294;
+  margin-right: 5px;
+}
+
+.dark .card__skill::before {  
+  content: '\2726';
+  color: rgb(145, 240, 240);
   margin-right: 5px;
 }

@@ -4,8 +4,7 @@ import '../assets/CoursesPage.css'
 import { Card } from '../components/Card.jsx'
 
 const CoursesPage = () => {
-  const courses = useContext(CoursesContext || []);
-  console.log('courses:', courses)
+  const courses = useContext(CoursesContext || []);  
 
   return (
     <main>
