@@ -31,6 +31,15 @@ const CoursesPage = () => {
       <section className='courses'>
         <h2 className='courses__title'>Choose Your Course:</h2>
 
+        <div className="select-wrapper">
+          <select onClick={(e) => setItemsPerPage(e.target.value)}>
+            <option value="10">10</option>
+            <option value="8">8</option>
+            <option value="6">6</option>
+          </select>
+          <span> Items per Page</span>
+        </div>
+
         <div className="pagination">
           <span onClick={prevPageHandler}
             className="pagination__arrow">&lt;</span>

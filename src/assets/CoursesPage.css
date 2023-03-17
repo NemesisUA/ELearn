@@ -74,3 +74,31 @@
   background-color: var(--color-primary);
   border: 2px solid var(--color-primary);
 }
+
+.select-wrapper span {
+  color: #424294;;
+}
+
+.select-wrapper select {
+  color: #424294;
+  outline: none;
+  padding: 0 10px;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.select-wrapper select option {
+  border: 2px solid var(--color-primary);
+}
+
+.dark .select-wrapper span,
+.dark .select-wrapper select {
+  color: var(--color-primary); 
+  
+}
+
+.dark .select-wrapper select {
+  background-color: gray;
+  
+}
