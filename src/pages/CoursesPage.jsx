@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CoursesContext } from '../hoc/CoursesProvider'
 import '../assets/CoursesPage.css'
 import { Card } from '../components/Card.jsx'
@@ -63,15 +64,17 @@ const CoursesPage = () => {
 
          <ul className='courses__list'>
           { visibleItems && visibleItems.length > 0 &&
-            visibleItems.map(item => (             
-              <Card 
-                key={item.id} 
-                title={item.title}
-                src={item.previewImageLink}
-                lessonsCount={item.lessonsCount}
-                rating={item.rating} 
-                skills={item.meta.skills} 
-              />
+            visibleItems.map(item => (
+              <Link key={item.id} to={`courses/${item.id}`} >                        
+                <Card 
+                  key={item.id} 
+                  title={item.title}
+                  src={item.previewImageLink}
+                  lessonsCount={item.lessonsCount}
+                  rating={item.rating} 
+                  skills={item.meta.skills} 
+                />
+              </Link>  
             ))
           }
         </ul> 
