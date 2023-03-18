@@ -102,3 +102,9 @@
   background-color: gray;
   
 }
+
+@media screen and (max-width: 575px) {
+  .courses {
+    padding: 30px 0;
+  }
+}

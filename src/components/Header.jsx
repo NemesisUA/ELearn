@@ -13,9 +13,9 @@ export const Header = () => {
         <div className='logo-wrapper'>
           <NavLink to='/'>
             <div className="logo"></div>
-          </NavLink>
-          <span>E</span>
-          <h1 className="header__title">-Learn</h1>
+          </NavLink>  
+          <span>E&#x301c;</span>        
+          <h1 className="header__title">ELearn</h1>
         </div>
 
         <nav className="header__navigation">
