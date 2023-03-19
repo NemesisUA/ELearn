@@ -9,7 +9,14 @@
   margin-bottom: 30px;
 }
 
+.course h4 {
+  color: #424294;
+}
 
+.course__video {
+  width: 600px;
+  cursor: pointer;
+}
 
 
 

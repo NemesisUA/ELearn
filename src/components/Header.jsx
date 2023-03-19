@@ -14,8 +14,8 @@ export const Header = () => {
           <NavLink to='/'>
             <div className="logo"></div>
           </NavLink>  
-          <span>E&#x301c;</span>        
-          <h1 className="header__title">ELearn</h1>
+          <span>E</span>        
+          <h1 className="header__title">E-Learn</h1>
         </div>
 
         <nav className="header__navigation">

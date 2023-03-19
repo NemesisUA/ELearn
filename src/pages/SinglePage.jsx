@@ -1,29 +1,63 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef, useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CoursesContext } from '../hoc/CoursesProvider';
 import '../assets/SinglePage.css'
+import ReactHlsPlayer from 'react-hls-player';
+import { LocalStorageService, LS_KEYS} from '../sevices/LocalStorage';
 
 const SinglePage = () => {  
   const courses  = useContext(CoursesContext || []);
-  const id = useParams().id;
-  //  {id: "352be3c6-848b-4c19-9e7d-54fe68fef183"}
-  console.log('id', id)
-  const course = courses.filter(el => el.id === id)[0] || {};
-  console.log('course', course)
+  const id = useParams().id; 
+  const [courseById, setCourseById] = useState({});   
 
+  useEffect(() => {
+    setCourseById(() => courses.filter(el => el.id === id)[0])
+  }, []);
+  
+  // player
+  const playerRef = useRef();
 
+  function playVideo() {
+    const savedVideos = LocalStorageService.get(LS_KEYS.VIDEOS);    
+    playerRef.current.currentTime = +savedVideos[id] || 0;
+    playerRef.current.play();    
+    playerRef.current.controls = true;
+  }
+
+  function pauseVideo() {
+    playerRef.current.pause();
+    playerRef.current.controls = false;
+        
+    LocalStorageService.set(LS_KEYS.VIDEOS, {
+      ...(LocalStorageService.get(LS_KEYS.VIDEOS) || {}),
+      [id]: playerRef.current.currentTime 
+  });
+  }
+ 
   return (
     <main>
       <div className="wrapper">
         <section className='course'>
-          <h2 className='course__title'>{course.title}</h2>
+          <h2 className='course__title'>{courseById?.title}</h2>          
           
-          <h3>video</h3>
+          <div className='course__video'>
+            <h4>Video:</h4>
+            <ReactHlsPlayer
+              playerRef={playerRef}
+              onMouseOver = {playVideo}
+              onMouseOut = {pauseVideo}              
+              //src={courseId.meta.courseVideoPreview.link} 
+              src={'http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8'}                    
+              poster={courseById?.previewImageLink  + '/cover.webp'}
+              autoPlay={false}
+              controls={false}
+              width="100%"
+              height="auto"/> 
+          </div> 
 
-          <video width="320" height="240" controls
-           poster={course.previewImageLink  + '/cover.webp'} >
-          <sourse src={course.meta.courseVideoPreview.link} type="application/x-mpegURL" />
-          </video>
+          <h4>Course Lessons: {courseById?.lessonsCount}</h4> 
+          <h4>Course Duration, min: {courseById?.duration}</h4> 
+          <p>{courseById?.description}</p>     
 
         </section>
       </div>
