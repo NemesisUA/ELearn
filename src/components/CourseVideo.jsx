@@ -2,7 +2,7 @@ import { useRef} from 'react'
 import ReactHlsPlayer from 'react-hls-player';
 import { LocalStorageService, LS_KEYS} from '../sevices/LocalStorage';
 
-const CourseVideo = ({ id, courseById }) => {
+const CourseVideo = ({ id, courseById, onClick }) => {
   const playerRef = useRef();
 
   function playVideo() {
@@ -21,7 +21,7 @@ const CourseVideo = ({ id, courseById }) => {
       [id]: playerRef.current.currentTime 
   });
   }
-
+ 
   return (
     <div className='course__video'>
             <h4>Video:</h4>
@@ -29,7 +29,8 @@ const CourseVideo = ({ id, courseById }) => {
             <ReactHlsPlayer
               playerRef={playerRef}
               onMouseOver = {playVideo}
-              onMouseOut = {pauseVideo}              
+              onMouseOut = {pauseVideo} 
+              onClick ={onClick}             
               //src={courseId.meta.courseVideoPreview.link} 
               src={'http://playertest.longtailvideo.com/adaptive/wowzaid3/playlist.m3u8'}                    
               poster={courseById?.previewImageLink  + '/cover.webp'}

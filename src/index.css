@@ -1,5 +1,12 @@
 @import "./assets/normalise.css";
 
+#modal-root {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+
 * {  
   box-sizing: border-box;
 }
@@ -23,7 +30,9 @@ ul, li {
 
   --color-primary: #FF9900;
   --color-secondary: #FF7549;
-  --color-secondary-lighten: #fed1c2;
+  
+  --text-light-theme: #424294;
+  --text-dark-theme: #91f0f0;
 }
 
 body {

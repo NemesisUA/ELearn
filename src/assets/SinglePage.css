@@ -5,12 +5,20 @@
 .course__title {
   text-align: center;
   /* color: var(--color-secondary); */
-  color: #424294;
+  color: var(--text-light-theme);
   margin-bottom: 30px;
 }
 
+.dark .course__title {
+  color: var(--text-dark-theme);
+}
+
 .course h4 {
-  color: #424294;
+  color: var(--text-light-theme);
+}
+
+.dark .course h4 {
+  color: var(--text-dark-theme);
 }
 
 .course__video {
@@ -18,7 +26,33 @@
   cursor: pointer;
 }
 
+.modal {
+  position: fixed;
+  height: 200px;
+  width: 320px;
+  bottom: 0;
+  right: 0;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;  
+}
 
+.close-modal {
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+}
+
+.close-modal:hover {
+  background-color: var(--color-secondary);
+}
+
+.close-modal:active {
+  background-color: gray;
+}
 
 
 @media screen and (max-width: 575px) {

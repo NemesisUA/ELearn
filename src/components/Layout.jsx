@@ -9,6 +9,7 @@ export const Layout = () => {
       <Header />
       <Outlet></Outlet>
       <Footer />
+      <div id="modal-root"></div>
     </>
   )
 }
